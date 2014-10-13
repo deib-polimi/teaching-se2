@@ -26,9 +26,6 @@
 
 	<build>
 		<plugins>
-			<!-- Sine this is an integration test module, the Failsafe plugin is now 
-				use. It will only pickup the integration files from the **/utest/ directory 
-				when running the integration-test. Please do not confuse this with unit test. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
