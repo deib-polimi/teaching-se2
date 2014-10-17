@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+	<jdbc-connection-pool name="HelloWorldPool"
+		res-type="javax.sql.DataSource" datasource-classname="org.apache.derby.jdbc.ClientDataSource"
+		ping="true" steady-pool-size="8" pool-resize-quantity="2"
+		max-pool-size="32" idle-timeout-in-seconds="600"
+		max-wait-time-in-millis="6000" statement-timeout-in-seconds="60">
+		<property name="serverName" value="localhost" />
+		<property name="portNumber" value="1527" />
+		<property name="databaseName" value="helloworlddb" />
+		<property name="URL"
+			value="jdbc:derby://localhost:1527/helloworlddb;create=true" />
+		<property name="driverClass" value="org.apache.derby.jdbc.ClientDriver" />
+	</jdbc-connection-pool>
+	<jdbc-resource jndi-name="jdbc/helloworlddb" pool-name="HelloWorldPool" />
+</resources>

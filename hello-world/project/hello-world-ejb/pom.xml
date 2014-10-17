@@ -56,6 +56,7 @@
                 <version>2.17</version>
                 <executions>
                     <execution>
+                        <id>sf1</id>
                         <goals>
                             <goal>test</goal>
                         </goals>
