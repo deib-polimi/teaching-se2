@@ -12,13 +12,15 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import lombok.Data;
+
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "Word.search", query = "SELECT DISTINCT w "
 				+ "FROM WordEntity w WHERE w.content LIKE '%:filter%'"),
 		@NamedQuery(name = "Word.all", query = "SELECT DISTINCT w from WordEntity w") })
 @Table(name = "Word")
-public class WordEntity implements Serializable {
+@Data public class WordEntity implements Serializable {
 	public WordEntity() {
 		super();
 		this.content = "empty_word";
@@ -39,32 +41,6 @@ public class WordEntity implements Serializable {
 	@NotNull
 	private String content;
 
+	@NotNull
 	private Date createdAt;
-
-	// getters and setters
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
 }

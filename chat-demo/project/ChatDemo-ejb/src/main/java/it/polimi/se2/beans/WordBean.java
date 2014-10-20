@@ -16,17 +16,6 @@ public class WordBean implements Word {
 	@PersistenceContext
     private EntityManager em;
     
-//    @PostConstruct
-//    public void postContruct(){
-//    	Context ctx;
-//		try {
-//			ctx = new InitialContext();
-//			em = (EntityManager) ctx.lookup("jndi/ChatDemoDB");
-//		} catch (NamingException e) {
-//			Logger.getLogger(WordBean.class.getName()).log(Level.SEVERE, null, e);
-//		}  	
-//    }
-
 	@Override
 	public WordEntity add(String word) {
 		WordEntity newWord = new WordEntity(word);

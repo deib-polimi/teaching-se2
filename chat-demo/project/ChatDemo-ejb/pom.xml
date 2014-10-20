@@ -30,6 +30,12 @@
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>4.3.6.Final</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.14.8</version>
+		</dependency>
     </dependencies>
 
     <build>
