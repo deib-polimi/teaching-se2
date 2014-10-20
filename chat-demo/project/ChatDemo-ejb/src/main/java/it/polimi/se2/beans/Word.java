@@ -4,9 +4,6 @@ import it.polimi.se2.entities.WordEntity;
 
 import java.util.List;
 
-import javax.ejb.Remote;
-
-@Remote
 public interface Word {
 
 	public WordEntity add(String word);

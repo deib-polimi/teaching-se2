@@ -5,10 +5,12 @@ import it.polimi.se2.entities.WordEntity;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
+@Dependent
 public class WordBean implements Word {
 
 	@PersistenceContext
