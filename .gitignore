@@ -44,6 +44,8 @@ target
 .project
 .classpath
 .idea
+*.iml
+.metadata
 
 # config file managed by maven #
 ################################
