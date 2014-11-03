@@ -46,9 +46,9 @@ target
 .idea
 *.iml
 .metadata
+bin
 
 # config file managed by maven #
 ################################
 MANIFEST.MF
-application.xml
-web.xml
+nb-configuration.xml
