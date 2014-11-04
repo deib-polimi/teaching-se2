@@ -39,7 +39,7 @@
                         </component>
                     </components>
                 </configuration>
-                <executions>
+<!--                <executions>
                     <execution>
                         <id>gf-undeploy</id>
                         <goals>
@@ -54,7 +54,7 @@
                         </goals>
                         <phase>package</phase>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
         </plugins>
         <finalName>hello-world</finalName>
