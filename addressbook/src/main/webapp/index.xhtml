@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="First Name" for="firstName"/>
+                <h:inputText id="firstName" value="#{contactBean.current.firstName}"/>
+                <h:outputLabel value="Last Name" for="lastName"/>
+                <h:inputText id="lastName" value="#{contactBean.current.lastName}"/>
+                <h:outputLabel value="Phone number" for="phoneNumber"/>
+                <h:inputText id="phoneNumber" value="#{contactBean.current.phoneNumber}"/>
+                <h:outputLabel value="Email" for="email"/>
+                <h:inputText id="email" value="#{contactBean.current.email}"/>
+            </h:panelGrid>
+            <h:commandButton value="create">
+                <f:ajax listener="#{contactBean.create()}" execute="@form" render="@form"/>
+            </h:commandButton>
+            <h:messages id="msg" style="color: red"/>
+            <p>Number of contacts: #{contactBean.count}</p>
+	</h:form>
+    </h:body>
+</html>
+
