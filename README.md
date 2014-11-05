@@ -10,11 +10,13 @@ Java EE 7 examples for SE2 classes
 
 # Starting Maven Archetype
 
+```
 Group ID: com.airhacks
 Artifact ID: javaee7-essentials-archetype
 Version: 1.2
 Repo: http://repo.maven.apache.org/maven2/
 Description: Java EE 7 project template. Clean, lean and minimalistic.
+```
 
 * From CLI: Run
 
