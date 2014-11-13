@@ -131,7 +131,8 @@ Follow these steps for creating a JDBCRealm:
 	* Digest Algorithm: SHA-256
 * Server restart may be required
 	
-# Additional Material
+# Interesting Links
 * [Java EE 7 Official Documentation](https://docs.oracle.com/javaee/)
 * [Official java ee 7 Tutorial examples](https://github.com/javaee-samples/javaee7-samples)
 * [A lot of interesting examples by Adam Bien](https://kenai.com/projects/javaee-patterns/sources/hg/show)
+* [JSON schema to POJO](http://www.jsonschema2pojo.org)
