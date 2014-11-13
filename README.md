@@ -81,6 +81,7 @@ Once started, go to http://localhost:4848. Default username and password are bot
 	```
 	sudo /usr/local/mysql/support-files/mysql.server [start|stop|restart]
 	```
+	
 ## How to create a database
 Here are the instructions from command line, but you can do the same from your IDE or using any mysql GUI client (e.g., [MySQL Workbench](http://www.mysql.it/products/workbench/)).
 * login as root (default password is empty)
