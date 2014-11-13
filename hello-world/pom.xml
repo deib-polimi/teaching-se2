@@ -16,6 +16,7 @@
     <build>
         <plugins>
             <plugin>
+<!-- this plugin can be used to deploy the application using maven glassfish plugin instead of the IDE -->
                 <groupId>org.glassfish.maven.plugin</groupId>
                 <artifactId>maven-glassfish-plugin</artifactId>
                 <version>2.1</version>
@@ -39,7 +40,8 @@
                         </component>
                     </components>
                 </configuration>
-<!--                <executions>
+                <!--
+               <executions>
                     <execution>
                         <id>gf-undeploy</id>
                         <goals>

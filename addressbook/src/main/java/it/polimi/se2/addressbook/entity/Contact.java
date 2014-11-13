@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -18,8 +20,14 @@ import javax.validation.constraints.Pattern;
  * @author miglie
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = Contact.findAll, query = "SELECT c FROM Contact c"),
+        @NamedQuery(name = Contact.count, query = "SELECT COUNT(c) FROM Contact c")
+})
 public class Contact implements Serializable {
     private static final long serialVersionUID = 1L;
+    public static final String findAll = "Contact.findAll";
+    public static final String count = "Contact.count";
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -8,6 +8,7 @@ package it.polimi.se2.counter.gui;
 import it.polimi.se2.counter.business.CounterService;
 import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -17,7 +18,7 @@ import javax.inject.Named;
  */
 @Named(value = "counter")
 @SessionScoped
-public class CounterBean implements Serializable{
+public class CounterBean implements Serializable {
 
     @EJB
     CounterService cs;

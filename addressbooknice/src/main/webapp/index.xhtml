@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel id="newcontactpanel" header="New Contact">
+                <p:panelGrid columns="3">
+                    <p:outputLabel id="firstnamelabel" value="First Name" for="firstName"/>
+                    <p:inputText id="firstName" value="#{contactBean.current.firstName}">
+                        <p:ajax update="firstnamemsg firstnamelabel"/>
+                    </p:inputText>
+                    <p:message id="firstnamemsg" for="firstName"/>
+                    <p:outputLabel id="lastnamelabel" value="Last Name" for="lastName"/>
+                    <p:inputText id="lastName" value="#{contactBean.current.lastName}">
+                        <p:ajax update="lastnamemsg lastnamelabel"/>
+                    </p:inputText>
+                    <p:message id="lastnamemsg" for="lastName"/>
+                    <p:outputLabel id="phonelabel" value="Phone number" for="phoneNumber"/>
+                    <p:inputText id="phoneNumber" value="#{contactBean.current.phoneNumber}">
+                        <p:ajax update="phonemsg phonelabel"/>
+                    </p:inputText>
+                    <p:message id="phonemsg" for="phoneNumber"/>
+                    <p:outputLabel id="emaillabel" value="Email" for="email"/>
+                    <p:inputText id="email" value="#{contactBean.current.email}">
+                        <p:ajax update="emailmsg emaillabel" />
+                    </p:inputText>
+                    <p:message id="emailmsg" for="email"/>
+                </p:panelGrid>
+                <p:commandButton value="create" update="newcontactpanel" actionListener="#{contactBean.create()}" ajax="true"/>
+                <p>Number of contacts: #{contactBean.count}</p>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

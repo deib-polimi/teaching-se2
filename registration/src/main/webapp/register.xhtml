@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registration</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Registration Form">
+                <h:panelGrid columns="3" id="regGrid">
+                    <h:outputLabel for="name">Name:</h:outputLabel>
+                    <p:inputText id="name" value="#{registrationBean.user.name}">
+                        <p:ajax update="namemsg"/>
+                    </p:inputText>
+                    <p:message id="namemsg" for="name" />
+                    
+                    <h:outputLabel for="email">Email:</h:outputLabel>
+                    <p:inputText id="email" value="#{registrationBean.user.email}" >
+                        <p:ajax update="emailmsg"/>
+                    </p:inputText>
+                    <p:message id="emailmsg" for="email" />
+                    
+                    <h:outputLabel for="password">Password:</h:outputLabel>
+                    <p:password id="password" value="#{registrationBean.user.password}"
+                                feedback="true" match="pwd2" label="Password"/>
+                    <p:message for="password" />
+
+                    <h:outputLabel for="pwd2">Confirm Password:</h:outputLabel>
+                    <p:password id="pwd2" label="Confirm Password"/>
+                </h:panelGrid>
+                <p:commandButton value="Register" update="regGrid"
+                                 action="#{registrationBean.register()}" />
+
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

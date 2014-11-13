@@ -10,9 +10,7 @@
         <h:form>
             <h:inputText id="x" value="#{calculatorBean.x}" label="x"/>
             <h:inputText id="y" value="#{calculatorBean.y}" label="y"/>
-            <h:commandButton value="add">
-                <f:ajax execute="x y" render="result msg" listener="#{calculatorBean.add()}"/>
-            </h:commandButton>
+            <h:commandButton value="add" action="#{calculatorBean.add()}"/>
             <h:inputText id="result" readonly="true" value="#{calculatorBean.result}"/>
             <h:messages id="msg" style="color: red"/>
         </h:form>

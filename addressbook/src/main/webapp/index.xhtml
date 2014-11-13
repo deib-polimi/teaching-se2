@@ -7,23 +7,33 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputLabel value="First Name" for="firstName"/>
-                <h:inputText id="firstName" value="#{contactBean.current.firstName}"/>
-                <h:outputLabel value="Last Name" for="lastName"/>
-                <h:inputText id="lastName" value="#{contactBean.current.lastName}"/>
-                <h:outputLabel value="Phone number" for="phoneNumber"/>
-                <h:inputText id="phoneNumber" value="#{contactBean.current.phoneNumber}"/>
-                <h:outputLabel value="Email" for="email"/>
-                <h:inputText id="email" value="#{contactBean.current.email}"/>
-            </h:panelGrid>
-            <h:commandButton value="create">
-                <f:ajax listener="#{contactBean.create()}" execute="@form" render="@form"/>
-            </h:commandButton>
-            <h:messages id="msg" style="color: red"/>
-            <p>Number of contacts: #{contactBean.count}</p>
-	</h:form>
+
+        <f:view>
+            <h:form>
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="First Name" for="firstName"/>
+                    <h:inputText id="firstName" value="#{contactBean.current.firstName}"/>
+                    <h:message errorStyle="color:red" for="firstName"/>
+                    <h:outputLabel value="Last Name" for="lastName"/>
+                    <h:inputText id="lastName" value="#{contactBean.current.lastName}"/>
+                    <h:message errorStyle="color:red" for="lastName"/>
+                    <h:outputLabel value="Phone number" for="phoneNumber"/>
+                    <h:inputText id="phoneNumber" value="#{contactBean.current.phoneNumber}">
+                        <f:ajax render="phonemsg"/>
+                    </h:inputText>
+                    <h:message id="phonemsg" errorStyle="color:red" for="phoneNumber"/>
+                    <h:outputLabel value="Email" for="email"/>
+                    <h:inputText id="email" value="#{contactBean.current.email}">
+                        <f:ajax render="emailmsg"/>
+                    </h:inputText>
+                    <h:message id="emailmsg" errorStyle="color:red" for="email" />
+                </h:panelGrid>
+                <h:commandButton value="create">
+                    <f:ajax listener="#{contactBean.create()}" execute="@form" render="@form"/>
+                </h:commandButton>
+                <p>Number of contacts: #{contactBean.count}</p>
+            </h:form>
+        </f:view>
     </h:body>
 </html>
 

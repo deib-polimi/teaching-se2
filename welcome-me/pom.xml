@@ -14,49 +14,6 @@
         </dependency>
     </dependencies>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.glassfish.maven.plugin</groupId>
-                <artifactId>maven-glassfish-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <glassfishDirectory>${glassfish.home}</glassfishDirectory>
-                    <domainDirectory>${glassfish.home}/domains/</domainDirectory>
-                    <user>${glassfish.user}</user>
-                    <passwordFile>${glassfish.passwordfile}</passwordFile>
-                    <autoCreate>true</autoCreate>
-                    <domain>
-                        <name>${glassfish.domain}</name>
-                        <host>${glassfish.domain.host}</host>
-                        <adminPort>${glassfish.domain.adminPort}</adminPort>
-                        <httpPort>8080</httpPort>
-                        <httpsPort>8443</httpsPort>
-                    </domain>
-                    <components>
-                        <component>
-                            <name>${project.artifactId}</name>
-                            <artifact>${project.build.directory}/${project.build.finalName}.war</artifact>
-                        </component>
-                    </components>
-                </configuration>
-<!--                <executions>
-                    <execution>
-                        <id>gf-undeploy</id>
-                        <goals>
-                            <goal>undeploy</goal>
-                        </goals>
-                        <phase>clean</phase>
-                    </execution>
-                    <execution>
-                        <id>gf-deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                        <phase>package</phase>
-                    </execution>
-                </executions>-->
-            </plugin>
-        </plugins>
         <finalName>welcome-me</finalName>
     </build>
     <properties>

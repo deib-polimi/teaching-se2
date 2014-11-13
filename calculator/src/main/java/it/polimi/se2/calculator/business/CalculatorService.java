@@ -6,13 +6,14 @@
 package it.polimi.se2.calculator.business;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 
 /**
  *
  * @author miglie
  */
-@Stateless
+@Stateful
 public class CalculatorService {
     
     @PostConstruct
@@ -20,7 +21,7 @@ public class CalculatorService {
         System.out.println("CalculatorService constructed!");
     }
 
-    public double add(double x, double y) {
+    public int add(int x, int y) {
         return x+y;
     }
 }
