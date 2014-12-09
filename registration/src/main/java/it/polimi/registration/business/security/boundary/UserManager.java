@@ -8,8 +8,6 @@ package it.polimi.registration.business.security.boundary;
 import it.polimi.registration.business.security.entity.Group;
 import it.polimi.registration.business.security.entity.User;
 import java.security.Principal;
-import javax.annotation.Resource;
-import javax.ejb.EJBContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -23,7 +21,7 @@ import javax.persistence.PersistenceContext;
 public class UserManager {
 
     @PersistenceContext
-    private EntityManager em;
+    EntityManager em;
     
     @Inject
     Principal principal;
@@ -40,4 +38,5 @@ public class UserManager {
     public User getLoggedUser() {
         return em.find(User.class, principal.getName());
     }
+    
 }

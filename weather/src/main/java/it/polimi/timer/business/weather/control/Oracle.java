@@ -6,6 +6,8 @@
 package it.polimi.timer.business.weather.control;
 
 import it.polimi.timer.business.weather.entity.Forecast;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 
 /**
  *

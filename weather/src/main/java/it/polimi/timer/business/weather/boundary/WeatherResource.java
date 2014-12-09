@@ -6,6 +6,7 @@
 package it.polimi.timer.business.weather.boundary;
 
 import it.polimi.timer.business.weather.entity.Forecast;
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,7 +24,7 @@ import javax.ws.rs.core.MediaType;
 public class WeatherResource {
 
     
-    @Inject 
+    @EJB
     WeatherService ws;
     
     @GET
@@ -31,4 +32,6 @@ public class WeatherResource {
     public Forecast forecast() {
         return ws.getForecast();
     }
+    
+    
 }
