@@ -23,7 +23,7 @@ public class HelloBean {
     }
     
     public String getMessage() {
-        return "Hello Wolrd";
+        return "Hello World!";
     }
     
 }
