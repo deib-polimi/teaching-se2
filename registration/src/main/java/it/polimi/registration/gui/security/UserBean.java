@@ -16,7 +16,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named
 @RequestScoped
-public class UserBean {
+public class UserBean{
 
     @EJB
     UserManager um;

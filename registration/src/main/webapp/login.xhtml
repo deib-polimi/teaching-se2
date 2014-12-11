@@ -2,26 +2,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Login Page</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form prependId="false">
             <p:panel header="Login Form">
                 <p:panelGrid columns="2">
-                    <p:outputLabel for="usernameInput" value="Username"/>
-                    <p:inputText id="usernameInput" value="#{loginBean.username}" 
+                    <p:outputLabel for="username" value="Email"/>
+                    <p:inputText id="username" value="#{loginBean.username}" 
                                  required="true" />
-                    <p:outputLabel for="passwordInput" value="Password"/>
-                    <p:password id="passwordInput" value="#{loginBean.password}" 
+                    <p:outputLabel for="pass" value="Password"/>
+                    <p:password id="pass" value="#{loginBean.password}" 
                                 required="true" />
-                    <p:commandButton value="Login" 
-                                     action="#{loginBean.login()}" />
+                    <p:commandButton action="#{loginBean.login()}" value="Login" />
                 </p:panelGrid>
             </p:panel>
         </h:form>
+        <h:outputText rendered="#{param['error']}" style="color: red" value="LOGIN FAILED"/><br/>
         <h:link outcome="register" value="Register"/>
     </h:body>
 </html>

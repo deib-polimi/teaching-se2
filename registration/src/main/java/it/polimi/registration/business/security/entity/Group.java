@@ -10,5 +10,5 @@ package it.polimi.registration.business.security.entity;
  * @author miglie
  */
 public class Group {
-    public static final String USER = "USER";
+    public static final String USERS = "USERS";
 }

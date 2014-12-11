@@ -6,8 +6,11 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Welcome back #{userBean.name}<br/>
-        <h:link outcome="#{loginBean.logout()}" value="logout"/>
+        Logged user: #{userBean.name}<br/>
+        <h:link outcome="garden" value="garden"/>
+        <h:form>
+        <h:commandLink action="#{loginBean.logout()}" value="logout"/>
+        </h:form>
     </h:body>
 </html>
 

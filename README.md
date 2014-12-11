@@ -121,10 +121,10 @@ Follow these steps for creating a JDBCRealm:
 	* Class name: JDBCRealm
 	* JAAS Context: jdbcRealm
 	* JNDI: your data base resource name, where username, password and group name are going to be saved (e.g., jdbc/mydb)
-	* User Table: the table containing username and password (e.g., user)
+	* User Table: the table containing username and password (e.g., users)
 	* User Name Column: the name of the column containing the username (e.g., email)
 	* Password Column: the name of the column containing the password (e.g., password)
-	* Group Table: the table containing username and group, can be the user table (e.g., user)
+	* Group Table: the table containing username and group, can be the user table (e.g., users)
 	* Group Table User Name Column: the name of the column in the Group Table containing the username (e.g., email)
 	* Group Name Column: the name of the column in the Group Table containing the group name (e.g., groupname). WARNING: do not use "group", since it is a reserved word and queries will fail
 	* Password Encryption Algorithm: MD5

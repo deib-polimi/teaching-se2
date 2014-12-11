@@ -15,7 +15,7 @@ import javax.enterprise.context.RequestScoped;
  *
  * @author miglie
  */
-@Named(value = "registrationBean")
+@Named
 @RequestScoped
 public class RegistrationBean {
 

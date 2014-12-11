@@ -37,7 +37,7 @@ public class UserManagerTest {
     public void newUsersShouldBelongToUserGroupAndSavedOnce() {
         User newUser = new User();
         cut.save(newUser);
-        assertThat(newUser.getGroupName(), is(Group.USER));
+        assertThat(newUser.getGroupName(), is(Group.USERS));
         verify(cut.em,times(1)).persist(newUser);
     }
 }

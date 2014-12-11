@@ -6,7 +6,6 @@
 package it.polimi.registration.gui.security;
 
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -23,7 +22,7 @@ public class LoginBean {
 
     private String username;
     private String password;
-    
+
     public LoginBean() {
     }
 
@@ -54,16 +53,10 @@ public class LoginBean {
         }
         return "/user/home";
     }
-
     public String logout() {
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-        try {
-            request.logout();
-        } catch (ServletException e) {
-            context.addMessage(null, new FacesMessage("Logout failed."));
-        }
+        request.getSession().invalidate();
         return "/index?faces-redirect=true";
     }
 }
-
