@@ -7,7 +7,7 @@
         <title>Registration</title>
     </h:head>
     <h:body>
-        <h:form prependId="false">
+        <h:form id="registrationform">
             <p:panel header="Registration Form">
                 <h:panelGrid columns="3" id="regGrid">
                     <h:outputLabel for="name">Name:</h:outputLabel>
@@ -30,7 +30,7 @@
                     <h:outputLabel for="pwd2">Confirm Password:</h:outputLabel>
                     <p:password id="pwd2" label="Confirm Password"/>
                 </h:panelGrid>
-                <p:commandButton value="Register" update="regGrid"
+                <p:commandButton id="submit" value="Register" update="regGrid"
                                  action="#{registrationBean.register()}" />
 
             </p:panel>

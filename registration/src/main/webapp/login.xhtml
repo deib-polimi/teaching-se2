@@ -7,7 +7,7 @@
         <title>Login Page</title>
     </h:head>
     <h:body>
-        <h:form prependId="false">
+        <h:form id="loginform">
             <p:panel header="Login Form">
                 <p:panelGrid columns="2">
                     <p:outputLabel for="username" value="Email"/>
@@ -16,12 +16,12 @@
                     <p:outputLabel for="pass" value="Password"/>
                     <p:password id="pass" value="#{loginBean.password}" 
                                 required="true" />
-                    <p:commandButton action="#{loginBean.login()}" value="Login" />
+                    <p:commandButton id="submit" action="#{loginBean.login()}" value="Login" />
                 </p:panelGrid>
             </p:panel>
         </h:form>
         <h:outputText rendered="#{param['error']}" style="color: red" value="LOGIN FAILED"/><br/>
-        <h:link outcome="register" value="Register"/>
+        <p:link outcome="register" value="Register"/>
     </h:body>
 </html>
 
