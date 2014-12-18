@@ -16,11 +16,11 @@
                     <p:outputLabel for="pass" value="Password"/>
                     <p:password id="pass" value="#{loginBean.password}" 
                                 required="true" />
-                    <p:commandButton id="submit" action="#{loginBean.login()}" value="Login" />
+                    <p:commandButton id="submit" action="#{loginBean.login()}" value="Login" ajax="true" update="@all"/>
                 </p:panelGrid>
             </p:panel>
+            <h:messages  style="color: red"/>
         </h:form>
-        <h:outputText rendered="#{param['error']}" style="color: red" value="LOGIN FAILED"/><br/>
         <p:link outcome="register" value="Register"/>
     </h:body>
 </html>

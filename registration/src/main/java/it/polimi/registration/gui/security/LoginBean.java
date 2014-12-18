@@ -5,10 +5,13 @@
  */
 package it.polimi.registration.gui.security;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,6 +22,10 @@ import javax.servlet.http.HttpServletRequest;
 @Named
 @RequestScoped
 public class LoginBean {
+    
+    @Inject
+    private Logger logger;
+    
 
     private String username;
     private String password;
@@ -47,11 +54,12 @@ public class LoginBean {
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
             request.login(this.username, this.password);
+            return "/user/home";
         } catch (ServletException e) {
-            context.addMessage(null, new FacesMessage("Login failed."));
-            return "login";
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Login Failed","Login Failed"));
+            logger.log(Level.SEVERE,"Login Failed");
+            return null;
         }
-        return "/user/home";
     }
     public String logout() {
         FacesContext context = FacesContext.getCurrentInstance();
